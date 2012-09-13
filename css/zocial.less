@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+@zocialPath: '.';
+
+@font-face {
+	font-family: 'zocial';
+	font-style: normal;
+	font-weight: normal;
+	src: url('@{zocialPath}/zocial-regular-webfont.eot');
+	src: url('@{zocialPath}/zocial-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('@{zocialPath}/zocial-regular-webfont.woff') format('woff'),
+		url('@{zocialPath}/zocial-regular-webfont.ttf') format('truetype'),
+		url('@{zocialPath}/zocial-regular-webfont.svg#ZocialRegular') format('svg');
+	unicode-range: 'U+0-U+10FFFF';
+}
+
+.zocial {
+	.gradient (@color1, @color2, @pos2, @color3, @pos3, @color4, @startAt) {
+		background-image: -moz-linear-gradient(center @startAt, @color1, @color2 @pos2, @color3 @pos3, @color4);
+		background-image: -ms-linear-gradient(center @startAt, @color1, @color2 @pos2, @color3 @pos3, @color4);
+		background-image: -o-linear-gradient(center @startAt, @color1, @color2 @pos2, @color3 @pos3, @color4);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(@color1), color-stop(@pos2, @color2), color-stop(@pos3, @color3), to(@color4));
+		background-image: -webkit-linear-gradient(center @startAt, @color1, @color2 @pos2, @color3 @pos3, @color4);
+		background-image: linear-gradient(center @startAt, @color1, @color2 @pos2, @color3 @pos3, @color4);
+	}
+	.gradient (@color1, @color2, @pos2, @color3, @pos3, @color4) {
+		.gradient(@color1, @color2, @pos2, @color3, @pos3, @color4, top);
+	}
+	.gradient(rgba(255,255,255,.1), rgba(255,255,255,.05), 49%, rgba(0,0,0,.05), 51%, rgba(0,0,0,.1));
+	
+	&, a& {
+		border: 1px solid #777;
+		border-color: rgba(0,0,0,0.2);
+		border-bottom-color: #333;
+		border-bottom-color: rgba(0,0,0,0.4);
+		color: #fff;
+		-moz-box-shadow: inset 0 0.08em 0 rgba(255,255,255,0.4), inset 0 0 0.1em rgba(255,255,255,0.9);
+		-webkit-box-shadow: inset 0 0.08em 0 rgba(255,255,255,0.4), inset 0 0 0.1em rgba(255,255,255,0.9);
+		box-shadow: inset 0 0.08em 0 rgba(255,255,255,0.4), inset 0 0 0.1em rgba(255,255,255,0.9);
+		cursor: pointer;
+		display: inline-block;
+		font: bold 100%/2.1 "Lucida Grande", Tahoma, sans-serif;
+		padding: 0 .95em 0 0;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+		white-space: nowrap;
+	
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	
+		position: relative;
+	
+		-moz-border-radius: .3em;
+		-webkit-border-radius: .3em;
+		border-radius: .3em;
+	}
+	
+	&:before {
+		content: "";
+		border-right: 0.075em solid rgba(0,0,0,0.1);
+		float: left;
+		font: 120%/1.65 zocial;
+		font-style: normal;
+		font-weight: normal;
+		margin: 0 0.5em 0 0;
+		padding: 0 0.5em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: none;
+	
+		-moz-box-shadow: 0.075em 0 0 rgba(255,255,255,0.25);
+		-webkit-box-shadow: 0.075em 0 0 rgba(255,255,255,0.25);
+		box-shadow: 0.075em 0 0 rgba(255,255,255,0.25);
+	
+		-webkit-font-smoothing: antialiased;
+	}
+
+	&:hover, &:focus {
+		background-image: -moz-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+		background-image: -ms-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+		background-image: -o-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+		background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.15)), color-stop(49%, rgba(255,255,255,.15)), color-stop(51%, rgba(0,0,0,.1)), to(rgba(0,0,0,.15)));
+		background-image: -webkit-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+		background-image: linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+	}
+	
+	&:active {
+		outline: none; /* outline is visible on :focus */
+		.gradient(rgba(255,255,255,.1), rgba(255,255,255,0), 30%, transparent, 50%, rgba(0,0,0,.1), bottom);
+	}
+	
+	&.icon {
+		overflow: hidden;
+		max-width: 2.4em;
+		padding-left: 0;
+		padding-right: 0;
+		max-height: 2.15em;
+		white-space: nowrap;
+		
+		&:before {
+			padding: 0;
+			width: 2em;
+			height: 2em;
+	
+			box-shadow: none;
+			border: none;
+		}
+	}
+
+	&.bitcoin,
+	&.cloudapp,
+	&.dropbox,
+	&.email,
+	&.eventful,
+	&.github,
+	&.gmail,
+	&.instapaper,
+	&.itunes,
+	&.ninetyninedesigns,
+	&.openid,
+	&.plancast,
+	&.posterous,
+	&.reddit,
+	&.secondary,
+	&.viadeo,
+	&.weibo,
+	&.wikipedia {
+		border: 1px solid #aaa;
+		border-color: rgba(0,0,0,0.3);
+		border-bottom-color: #777;
+		border-bottom-color: rgba(0,0,0,0.5);
+		-moz-box-shadow: inset 0 0.08em 0 rgba(255,255,255,0.7), inset 0 0 0.08em rgba(255,255,255,0.5);
+		-webkit-box-shadow: inset 0 0.08em 0 rgba(255,255,255,0.7), inset 0 0 0.08em rgba(255,255,255,0.5);
+		box-shadow: inset 0 0.08em 0 rgba(255,255,255,0.7), inset 0 0 0.08em rgba(255,255,255,0.5);
+		text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+		
+		&:focus, &:hover {
+			.gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.2), 49%, rgba(0,0,0,0.05), 51%, rgba(0,0,0,0.15));
+		}
+	
+		&:active {
+			.gradient(rgba(255,255,255,0), rgba(255,255,255,0), 30%, rgba(0,0,0,0), 50%, rgba(0,0,0,0.1))
+		}
+	}
+
+	/* Button icon and color */
+	/* Icon characters are stored in unicode private area */
+	&.amazon {background-color: #ffad1d; color: #030037; text-shadow: 0 1px 0 rgba(255,255,255,0.5); &:before {content: "a";}}
+	&.android {background-color: #a4c639; &:before {content: "&";}}
+	&.angellist {background-color: #000; &:before {content: "\00D6";}}
+	&.aol {background-color: #f00; &:before {content: "\"";}}
+	&.appnet { background-color: #3178bd; &:before {content: "\00E1";}}
+	&.appstore {background-color: #000; &:before {content: "A";}}
+	&.bitcoin {background-color: #efefef; color: #4d4d4d; &:before {content: "2"; color: #f7931a;}}
+	&.blogger {background-color: #ee5a22; &:before {content: "B";}}
+	&.call {background-color: #008000; &:before {content: "7";}}
+	&.cal {background-color: #d63538; &:before {content: ".";}}
+	&.cart {background-color: #333; &:before {content: "\00C9";}}
+	&.chrome {background-color: #006cd4; &:before {content: "[";}}
+	&.cloudapp {background-color: #fff; color: #312c2a; &:before {content: "c";}}
+	&.creativecommons {background-color: #000; &:before {content: "C";}}
+	&.delicious {background-color: #3271cb; &:before {content: "#";}}
+	&.digg {background-color: #164673; &:before {content: ";";}}
+	&.disqus {background-color: #5d8aad; &:before {content: "Q";}}
+	&.dribbble {background-color: #ea4c89; &:before {content: "D";}}
+	&.dropbox {background-color: #fff; color: #312c2a; &:before {content: "d"; color: #1f75cc;}}
+	&.email {background-color: #f0f0eb; color: #312c2a; &:before {content: "]"; color: #312c2a;}}
+	&.eventasaurus {background-color: #192931; color: #fff; &:before {content: "v"; color: #9de428;}}
+	&.eventbrite {background-color: #ff5616; &:before {content: "|";}}
+	&.eventful {background-color: #fff; color: #47ab15; &:before {content: "'"; color: #0066CC;}}
+	&.evernote {background-color: #6bb130; color: #fff; &:before {content: "E";}}
+	&.facebook {background-color: #4863ae; &:before {content: "f";}}
+	&.fivehundredpx {background-color: #333; &:before {content: "0"; color: #29b6ff;}}
+	&.flattr {background-color: #8aba42; &:before {content: "%";}}
+	&.flickr {background-color: #ff0084; &:before {content: "F";}}
+	&.forrst {background-color: #1e360d; &:before {content: ":"; color: #50894f;}}
+	&.foursquare {background-color: #44a8e0; &:before {content: "4";}}
+	&.github {background-color: #fbfbfb; color: #050505; &:before {content: "g";}}
+	&.gmail {background-color: #efefef; color: #222; &:before {content: "m"; color: #f00;}}
+	&.google {background-color: #4e6cf7; &:before {content: "G";}}
+	&.googleplay {background-color: #000; &:before {content: "h";}}
+	&.googleplus {background-color: #dd4b39; &:before {content: "+";}}
+	&.gowalla {background-color: #ff720a; &:before {content: "@";}}
+	&.grooveshark {background-color: #111; color:#eee; &:before {content: "8";}}
+	&.guest {background-color: #1b4d6d; &:before {content: "?";}}
+	&.html5 {background-color: #ff3617; &:before {content: "5";}}
+	&.ie {background-color: #00a1d9; &:before {content: "6";}}
+	&.instapaper {background-color: #eee; color: #222; &:before {content: "I";}}
+	&.instagram {background-color: #3f729b; &:before {content: "\00DC";}}
+	&.intensedebate {background-color: #0099e1; &:before {content: "{";}}
+	&.itunes {background-color: #efefeb; color: #312c2a; &:before {content: "i"; color: #1a6dd2;}}
+	&.klout {background-color: #e34a25; &:before {content: "K"; }}
+	&.lanyrd {background-color: #2e6ac2; &:before {content: "-";}}
+	&.lastfm {background-color: #dc1a23; &:before {content: "l";}}
+	&.linkedin {background-color: #0083a8;  &:before {content: "L";}}
+	&.macstore {background-color: #007dcb;  &:before {content: "^";}}
+	&.meetup {background-color: #ff0026; &:before {content: "M";}}
+	&.myspace {background-color: #000; &:before {content: "_";}}
+	&.ninetyninedesigns {background-color: #fff; color: #072243; &:before {content: "9"; color: #f50;}}
+	&.openid {background-color: #f5f5f5; color: #333; &:before {content: "o"; color: #ff921d;}}
+	&.opentable {background-color: #990000; &:before {content: "\00C7";}}
+	&.paypal {background-color: #fff; color: #32689a; text-shadow: 0 1px 0 rgba(255,255,255,0.5); &:before {content: "$";}}
+	&.pinboard {background-color: blue; &:before {content: "n";}}
+	&.pinterest {background-color: #c91618; &:before {content: "1";}}
+	&.plancast {background-color: #e7ebed; color: #333; &:before {content: "P";}}
+	&.plurk {background-color: #cf682f; &:before {content: "j";}}
+	&.podcast {background-color: #9365ce; &:before {content: "`";}}
+	&.posterous {background-color: #ffd959; color: #bc7134; &:before {content: "~";}}
+	&.print {background-color: #f0f0eb; color: #222; text-shadow: 0 1px 0 rgba(255,255,255,0.8); &:before {content: "\00D1";}}
+	&.quora {background-color: #a82400; &:before {content: "q";}}
+	&.reddit {background-color: #fff; color: #222; &:before {content: ">"; color: red;}}
+	&.rss {background-color: #ff7f25; &:before {content: "R";}}
+	&.scribd {background-color: #231c1a; &:before {content: "}"; color: #00d5ea;}}
+	&.skype {background-color: #00a2ed; &:before {content: "S";}}
+	&.smashing {background-color: #ff4f27; &:before {content: "*";}}
+	&.songkick {background-color: #ff0050; &:before {content: "k";}}
+	&.soundcloud {background-color: #ff4500; &:before {content: "s";}}
+	&.spotify {background-color: #60af00; &:before {content: "=";}}
+	&.steam { background-color: #000; &:before {content: "b";}}
+	&.stumbleupon {background-color: #eb4924; &:before {content: "/";}}
+	&.tumblr {background-color: #374a61; &:before {content: "t";}}
+	&.twitter {background-color: #46c0fb; &:before {content: "T";}}
+	&.viadeo {background-color: #fff;  color: #000; &:before {content: "H"; color: #f59b20;}}
+	&.vimeo {background-color: #00a2cd; &:before {content: "V";}}
+	&.vk { background-color: #45688E; &:before {content: "N";}}
+	&.weibo {background-color: #faf6f1; color: #000; &:before {content: "J"; color: #e6162d;}}
+	&.wikipedia {background-color: #fff; color: #000; &:before {content: ",";}}
+	&.windows {background-color: #0052a4; color: #fff; &:before {content: "W";}}
+	&.wordpress {background-color: #464646; &:before {content: "w";}}
+	&.xing {background-color: #0A5D5E; &:before {content: "X"}}
+	&.yahoo {background-color: #a200c2; &:before {content: "Y";}}
+	&.yelp {background-color: #e60010; &:before {content: "y";}}
+	&.youtube {background-color: #f00; &:before {content: "U";}}
+
+	/*
+	The Miscellaneous Buttons
+	These button have no icons and can be general purpose buttons while ensuring consistent button style
+	Credit to @guillermovs for suggesting
+	*/
+	&.primary, &.secondary {margin: 0.1em 0; padding: 0 1em; &:before { display: none; }}
+	&.primary {background-color: #333;}
+	&.secondary {background-color: #f0f0eb; color: #222; text-shadow: 0 1px 0 rgba(255,255,255,0.8);}
+}
+
+/* Any browser-specific adjustments */
+button:-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
