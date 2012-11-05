@@ -7,7 +7,7 @@ Zocial uses @font-face icons, which means:
 * custom font file for all social icons
 * icon font use private unicode spaces for accessibility
 * em sizing based on button font-size
-* support for about 92 different services
+* support for 96 different services
 * buttons and icons supported
 * no raster images (sweet)
 * works splendidly on any browser supporting @font-face
