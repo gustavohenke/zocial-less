@@ -14,6 +14,10 @@ Zocial uses @font-face icons, which means:
 * CSS3 degrades gracefully in IE8 and below etc.
 * also includes generic icon-less primary and secondary buttons
 
+## Preview
+Want to see the buttons in live action? Access the following link then:
+[http://gustavohenke.github.com/zocial-less/](http://gustavohenke.github.com/zocial-less/)
+
 ## How to use these buttons
 
 	<button class='zocial facebook'>Button label here</button>
