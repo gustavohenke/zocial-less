@@ -5,9 +5,9 @@ If you want new buttons, you may ask Sam on the [Zocial official repository](htt
 
 Zocial uses @font-face icons, which means:
 * custom font file for all social icons
-* icon font use private unicode spaces for accessibility
+* icon font use private unicode spaces for accessibility _(No longer the reality for all icons)_
 * em sizing based on button font-size
-* support for 96 different services
+* support for 101 different services
 * buttons and icons supported
 * no raster images (sweet)
 * works splendidly on any browser supporting @font-face
